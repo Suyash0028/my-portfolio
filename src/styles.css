@@ -1,0 +1,57 @@
+/* Home.css */
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  background-size: cover;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100vh; /* Full height of the viewport */
+  padding: 10px;
+}
+
+.heading {
+  font-size: 4rem;
+  color: #343a40;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  display: block;
+  line-height: 1;
+  margin: 0;
+}
+
+.subheading {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  display: block;
+  line-height: 1;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.typing-animation {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+  
+@keyframes blink {
+  50% {
+    border-right-color: transparent;
+  }
+}
+  
+.typing-animation::after {
+  content: '|';
+  animation: blink 0.5s infinite alternate;
+}
+  
