@@ -2,29 +2,12 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { contactLinks } from '../constants/Constants';
-import emailjs from 'emailjs-com';
 
 function Contact({id}) {
   const [subject, setSubject] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      await emailjs.send('service_50vffqo', 'template_j5ronbj', {
-        from_email: 'suyashkulkarni43@gmail.com',
-        to_email: email,
-        subject: subject,
-        message: message
-      }, 'CH7OB0_JwoOKirHCH');
-      alert('Email sent successfully!');
-    } catch (error) {
-      console.error('Email sending failed:', error);
-      alert('Failed to send email. Please try again later.');
-    }
-  };
 
   return (
     <section id={id} className="py-5 vh-100">
@@ -32,24 +15,25 @@ function Contact({id}) {
         <h1 className="mb-4">Contact</h1>
         <div className="row">
           <div className="col-md-6">
-            <form className="needs-validation" noValidate onSubmit={handleSubmit}>
+            <form className="needs-validation" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="40a26cc4-87a3-4645-b54f-ede78f98d067" />
               <div className="mb-3">
                 <label htmlFor="sender_email" className="form-label float-start">Email</label>
-                <input type="email" className="form-control" id="sender_email" placeholder="Enter your email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" className="form-control" id="sender_email" name='email' placeholder="Enter your email" required value={email} onChange={(e) => setEmail(e.target.value)} />
                 <div className="invalid-feedback">
                   Please enter a valid email address.
                 </div>
               </div>
               <div className="mb-3">
                 <label htmlFor="subject" className="form-label float-start">Subject</label>
-                <input type="text" className="form-control" id="subject" placeholder="Enter subject" required value={subject} onChange={(e) => setSubject(e.target.value)} />
+                <input type="text" className="form-control" id="subject" name='subject' placeholder="Enter subject" required value={subject} onChange={(e) => setSubject(e.target.value)} />
                 <div className="invalid-feedback">
                   Please enter a subject.
                 </div>
               </div>
               <div className="mb-3">
                 <label htmlFor="message" className="form-label float-start">Message</label>
-                <textarea className="form-control" id="message" rows="5" placeholder="Enter message" required value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                <textarea className="form-control" id="message" name="message" rows="5" placeholder="Enter message" required value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                 <div className="invalid-feedback">
                   Please enter a message.
                 </div>
