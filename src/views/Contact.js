@@ -14,8 +14,8 @@ function Contact({id}) {
 
     try {
       await emailjs.send('service_50vffqo', 'template_j5ronbj', {
-        from_email: 'suyashkulkarni43@gmail.com', // Specify the sender's email address here
-        to_email: email, // Specify the recipient's email address here
+        from_email: 'suyashkulkarni43@gmail.com',
+        to_email: email,
         subject: subject,
         message: message
       }, 'CH7OB0_JwoOKirHCH');
@@ -27,9 +27,9 @@ function Contact({id}) {
   };
 
   return (
-    <section id={id} style={{ padding: '70px', height: '100vh' }}>
-      <h1>Contact</h1>
-      <div className="container mt-5">
+    <section id={id} className="py-5 vh-100">
+      <div className="container">
+        <h1 className="mb-4">Contact</h1>
         <div className="row">
           <div className="col-md-6">
             <form className="needs-validation" noValidate onSubmit={handleSubmit}>
@@ -54,32 +54,20 @@ function Contact({id}) {
                   Please enter a message.
                 </div>
               </div>
-              <button type="submit" className="btn btn-primary float-md-end">Submit</button>
+              <button type="submit" className="btn btn-primary">Submit</button>
             </form>
           </div>
           <div className="col-md-6 mt-4 mt-md-0">
             <div className="text-center text-md-end">
-              {/* <hr className="d-md-none" />
-              <p><FontAwesomeIcon icon={faPhone} /> Phone: +1234567890</p>
-              <p><FontAwesomeIcon icon={faEnvelope} /> Email: example@example.com</p>
-              <p><FontAwesomeIcon icon={faMapMarker} /> Address: 123 Street, City, Country</p>
-              <h1 className="mt-4 mb-4">Social</h1>
-              <div className="d-flex flex-wrap">
-                {contactLinks.map((el, index) => (
-                  <a href={el.link} key={index} className={"me-md-6 me-4 cursor-pointer mt-4 hover:scale-125"}>
-                    <img src={el.url} alt="" />
-                  </a>
-                ))}
-              </div> */}
               <h3 className="mb-4">Email</h3>
               <a href="mailto:suyashkulkarni43@gmail.com" className="font-weight-bold text-blue-700 d-block text-decoration-none"><FontAwesomeIcon icon={faEnvelope} />&nbsp;suyashkulkarni43@gmail.com</a>
               <h3 className="mt-4 mb-4">Address</h3>
               <p className="font-weight-bold text-blue-700 d-block">
-              <FontAwesomeIcon icon={faMapLocationDot} className="text-danger"/> 45 SilverStoner dr., Etobicoke <br />
+                <FontAwesomeIcon icon={faMapLocationDot} className="text-danger"/> 45 SilverStoner dr., Etobicoke <br />
                 Canada, On
               </p>
               <h3 className="mt-4 mb-4">Social</h3>
-              <ul className="list-unstyled d-flex flex-wrap justify-content-end">
+              <ul className="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-end">
                 {contactLinks.map((el, index) => (
                   <li key={index} className="mx-4 my-4">
                     <a href={el.link} className="d-block text-black">

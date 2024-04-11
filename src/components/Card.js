@@ -8,32 +8,22 @@ const Card = ({ title, content, maxContentLength }) => {
     };
 
     return (
-        <>
+        <div className="card mb-3">
+            <div className="card-body">
+                <h5 className="card-title">{title}</h5>
 
-            <div className="card" style={{ width: "18rem" }}>
-                <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
-
-                    {expanded ? (
-                        <p className="card-text">{content}</p>
-                    ) : (
-                        <div>
-                            {content.length > maxContentLength ? (
-                                <>
-                                    {`${content.substring(0, maxContentLength)}...`}
-                                    <br />
-                                    <button className="btn btn-primary" onClick={handleExpand} >Read more</button>
-                                </>
-                            ) : (
-                                <p className="card-text">{content}</p>
-                            )}
-                        </div>
-                    )}
-                </div>
+                {expanded || content.length <= maxContentLength ? (
+                    <p className="card-text">{content}</p>
+                ) : (
+                    <div>
+                        <p className="card-text">{`${content.substring(0, maxContentLength)}...`}</p>
+                        <button className="btn btn-link" onClick={handleExpand}>
+                            Read more
+                        </button>
+                    </div>
+                )}
             </div>
-
-        </>
-
+        </div>
     );
 };
 
