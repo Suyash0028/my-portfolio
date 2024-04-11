@@ -8,16 +8,17 @@ import cloudDark from '../assets/images/cloudBg.png';
 function Home({ id }) {
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
-  const messages = [
-    "Front End Developer",
-    "Full Stack Developer",
-    "SharePoint Developer"
-  ];
 
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
+    const messages = [
+      "Front End Developer",
+      "Full Stack Developer",
+      "SharePoint Developer"
+    ];
+
     const interval = setInterval(() => {
       if (typing && index < messages[currentMessageIndex].length) {
         setText((prevText) => prevText + messages[currentMessageIndex][index]);
@@ -36,7 +37,7 @@ function Home({ id }) {
     }, 100); // Adjust typing speed as needed (e.g., 100ms for a faster typing effect)
 
     return () => clearInterval(interval);
-  }, [index, currentMessageIndex, messages, typing]);
+  }, [index, currentMessageIndex, typing]);
 
   const animationProps = useSpring({
     from: { opacity: 0, transform: 'translateX(50px)' },
