@@ -1,38 +1,35 @@
-export const contactLinks = [
-    {
-        name: 'Stack Overflow',
-        url: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/40/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png',
-        link: 'https://stackoverflow.com/users/22525792/suyash-kulkarni'
-    },
-    {
-        name: 'Instagram',
-        url: 'https://img.icons8.com/doodle/40/000000/instagram-new--v2.png',
-        link: 'https://www.instagram.com/suyashkulkarni5719/'
-    },
-    {
-        name: 'Github',
-        url: 'https://img.icons8.com/doodle/40/000000/github--v1.png',
-        link: 'https://github.com/Suyash0028'
-    },
-    {
-        name: 'LinkedIn',
-        url: 'https://img.icons8.com/doodle/40/000000/linkedin--v2.png',
-        link: 'https://www.linkedin.com/in/suyash-kulkarni-29b78b213/'
-    }
-];
+// export const contactLinks = [
+//     {
+//         name: 'Stack Overflow',
+//         url: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/40/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png',
+//         link: 'https://stackoverflow.com/users/22525792/suyash-kulkarni'
+//     },
+//     {
+//         name: 'Instagram',
+//         url: 'https://img.icons8.com/doodle/40/000000/instagram-new--v2.png',
+//         link: 'https://www.instagram.com/suyashkulkarni5719/'
+//     },
+//     {
+//         name: 'Github',
+//         url: 'https://img.icons8.com/doodle/40/000000/github--v1.png',
+//         link: 'https://github.com/Suyash0028'
+//     },
+//     {
+//         name: 'LinkedIn',
+//         url: 'https://img.icons8.com/doodle/40/000000/linkedin--v2.png',
+//         link: 'https://www.linkedin.com/in/suyash-kulkarni-29b78b213/'
+//     }
+// ];
 
 export const techStack = [
-
     {
         name: "C Language",
         link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-plain.svg"
     },
-
     {
         name:"SharePoint",
         link: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Microsoft_Office_SharePoint_%282019%E2%80%93present%29.svg/2097px-Microsoft_Office_SharePoint_%282019%E2%80%93present%29.svg.png"
     },
-
     {
         name: "TypeScript",
         link: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
@@ -51,18 +48,19 @@ export const techStack = [
         link: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
     },
 
-    {
-        name: "Dart",
-        link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
-    },
-    {
-        name: "Flutter",
-        link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-plain.svg"
-    },
-    {
-        name: "React Native",
-        link: "https://pagepro.co/blog/wp-content/uploads/2020/03/react-native-logo-884x1024.png"
-    },
+    // {
+    //     name: "Dart",
+    //     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+    // },
+    // {
+    //     name: "Flutter",
+    //     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-plain.svg"
+    // },
+    // {
+    //     name: "React Native",
+    //     link: "https://pagepro.co/blog/wp-content/uploads/2020/03/react-native-logo-884x1024.png"
+    // },
+
     {
         name: "HTML",
         link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
@@ -129,6 +127,7 @@ export const techStack = [
         name: "Bash",
         link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
     },
+    
     // { name: "Vim", link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg" },
 
     {

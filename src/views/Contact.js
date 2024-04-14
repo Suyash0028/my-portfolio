@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { contactLinks } from '../constants/Constants';
 
 function Contact({id}) {
   const [subject, setSubject] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [fetchedData,setFetchedData] = useState([]);
 
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BASE_URL}/about`
+        );
+        const { data } = await response.json();
+        setFetchedData(data);
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchAboutData();
+  }, []);
 
   return (
     <section id={id} className="py-5 vh-100">
@@ -52,10 +68,10 @@ function Contact({id}) {
               </p>
               <h3 className="mt-4 mb-4">Social</h3>
               <ul className="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-end">
-                {contactLinks.map((el, index) => (
+                {fetchedData.map((el, index) => (
                   <li key={index} className="mx-4 my-4">
                     <a href={el.link} className="d-block text-black">
-                      <img src={el.url} alt="" className="img-fluid hover-scale-125" />
+                      <img src={el.iconUrl} alt="" className="img-fluid hover-scale-125" />
                     </a>
                   </li>
                 ))}

@@ -1,59 +1,45 @@
-import React from 'react';
-// import Card from '../components/Card';
+import React, { useEffect, useState } from 'react';
+import Card from '../components/Card';
 import '../styles.css'; // Import the Home styles
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Projects({ id }) {
+  const [fetchedData, setFetchedData] = useState([]);
 
+  useEffect(() => {
+    const fetchProjectData = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BASE_URL}/projects`
+        );
+        const { data } = await response.json();
+        setFetchedData(data);
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchProjectData();
+  }, []);
   return (
     <section id={id}>
       <div className="container">
-      <h2>Projects</h2>
-        {/* <div className="row row-cols-1 row-cols-md-3 g-4 mt-3">
-          <div className='col'>
-            <Card
-              title="Project 1"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam viverra ipsum nec finibus. Cras ut purus a libero vehicula tristique."
-              maxContentLength={100}
-            />
-          </div>
-          <div className='col'>
-            <Card
-              title="Project 2"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam viverra ipsum nec finibus. Cras ut purus a libero vehicula tristique."
-              maxContentLength={100}
-            />
-          </div>
-          <div className='col'>
-            <Card
-              title="Project 3"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam viverra ipsum nec finibus. Cras ut purus a libero vehicula tristique."
-              maxContentLength={100}
-            />
-          </div>
-          <div className='col'>
-            <Card
-              title="Project 4"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam viverra ipsum nec finibus. Cras ut purus a libero vehicula tristique."
-              maxContentLength={100}
-            />
-          </div>
-          <div className='col'>
-            <Card
-              title="Project 5"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam viverra ipsum nec finibus. Cras ut purus a libero vehicula tristique."
-              maxContentLength={100}
-            />
-          </div>
-          <div className='col'>
-            <Card
-              title="Project 6"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam viverra ipsum nec finibus. Cras ut purus a libero vehicula tristique."
-              maxContentLength={100}
-            />
-          </div>
-        </div> */}
+        <h2>Projects</h2>
+        <div className="row row-cols-1 row-cols-md-3 g-4 mt-3">
+          {fetchedData.map((el, index) => (
+            <div className='col'>
+              <Card
+                title={el.title}
+                content={el.content}
+                maxContentLength={100}
+                link={el.link}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="container mt-5">
+      <div className="container mt-2">
         <div className="row">
           <div className="col-md-6 d-flex">
             <div style={{ marginTop: '50px' }}>

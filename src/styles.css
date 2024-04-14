@@ -1,7 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
-  height: 100%;
-  background-size: cover;
+  height: 100vh; /* Subtract a fixed amount (e.g., 100px) */
+
 }
 
 .home {
@@ -9,6 +9,9 @@ body {
   flex-direction: column;
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
+}
+.mt-custom {
+  margin-top: 100px; /* Adjust the value as needed */
 }
 
 .heading {
