@@ -4,6 +4,7 @@ import { animated } from 'react-spring';
 import profilePictureImg from '../assets/images/codingImg.svg';
 import { useSpring } from 'react-spring';
 import cloudDark from '../assets/images/cloudBg.png';
+import resume from '../assets/resume/Suyash_Kulkarni_CV.docx';
 
 function Home({ id }) {
   const [text, setText] = useState('');
@@ -54,6 +55,11 @@ function Home({ id }) {
               <span className="heading">Hi, I am Suyash</span>
               <span className={`${"typing-animation"} ${"subheading"}`}>{text}</span>
               <span>Experienced IT professional proficient in a spectrum of technologies including React.js, TypeScript, SharePoint SPFx, PowerShell, HTML, CSS, C#, and .NET. Skilled in crafting seamless, user-friendly web applications and leveraging SharePoint for optimized solutions. Passionate about continuous learning and staying updated with emerging tech trends. Ready to collaborate on projects that demand innovation and efficiency in the IT landscape.</span>
+              <div>
+                <a href={resume} download>
+                  <button class="btn resume-button">Download Resume</button>
+                </a>
+              </div>
             </animated.div>
           </div>
           <div className="col-md-6">

@@ -10,6 +10,7 @@ body {
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
 }
+
 .mt-custom {
   margin-top: 100px; /* Adjust the value as needed */
 }
@@ -42,6 +43,16 @@ body {
 .typing-animation {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+.resume-button {
+  background-color: #007bff; /* Blue color for the button */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  font-size: 16px; /* Adjust font size as needed */
+  cursor: pointer; /* Show pointer cursor on hover */
+  margin-top: 20px;
 }
 
 
