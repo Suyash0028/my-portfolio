@@ -54,7 +54,7 @@ function Home({ id }) {
             <animated.div style={animationProps}>
               <span className="heading">Hi, I am Suyash</span>
               <span className={`${"typing-animation"} ${"subheading"}`}>{text}</span>
-              <span>Experienced IT professional proficient in a spectrum of technologies including React.js, TypeScript, SharePoint SPFx, PowerShell, HTML, CSS, C#, and .NET. Skilled in crafting seamless, user-friendly web applications and leveraging SharePoint for optimized solutions. Passionate about continuous learning and staying updated with emerging tech trends. Ready to collaborate on projects that demand innovation and efficiency in the IT landscape.</span>
+              <span>Welcome to a realm where IT expertise meets innovation! With mastery in React.js, TypeScript, SharePoint SPFx, and a suite of cutting-edge technologies, I architect seamless, user-centric web applications that redefine excellence. Leveraging SharePoint for optimized solutions is my forte, and my passion for continuous learning ensures I'm at the forefront of tech trends. Let's collaborate on projects that demand innovation and efficiency, transforming challenges into opportunities for success. Explore my portfolio and let's embark on a journey of groundbreaking solutions together!</span>
               <div>
                 <a href={resume} download>
                   <button class="btn resume-button">Download Resume</button>
