@@ -34,6 +34,7 @@ function Projects({ id }) {
                 content={el.content}
                 maxContentLength={100}
                 link={el.link}
+                tags={el.tags}
               />
             </div>
           ))}

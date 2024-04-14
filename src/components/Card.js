@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Tags from './Tags';
 
-const Card = ({ title, content, maxContentLength, link }) => {
+const Card = ({ title, content, maxContentLength, link, tags }) => {
     const [expanded, setExpanded] = useState(false);
 
     const handleExpand = () => {
@@ -20,10 +21,15 @@ const Card = ({ title, content, maxContentLength, link }) => {
                 ) : (
                     <div>
                         <p className="card-text">{`${content.substring(0, maxContentLength)}...`}</p>
-                        <button className="btn m-2" onClick={handleExpand} style={{backgroundColor: "#6c757d"}}>
+                        <div className="d-flex flex-wrap">
+                            {tags.map((tag, tagIndex) => (
+                                <Tags key={tagIndex} tag={tag} />
+                            ))}
+                        </div>
+                        <button className="btn mt-2" onClick={handleExpand} style={{ backgroundColor: "#6c757d", marginRight: '5px' }}>
                             Read more
                         </button>
-                        <a className="btn btn-success" href={link} style={{backgroundColor: "#007bff"}}>
+                        <a className="btn btn-success mt-2" href={link} style={{ backgroundColor: "#007bff" }}>
                             Open
                         </a>
                     </div>
