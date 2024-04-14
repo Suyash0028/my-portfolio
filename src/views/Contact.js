@@ -57,7 +57,7 @@ function Contact({id}) {
               <button type="submit" className="btn btn-primary">Submit</button>
             </form>
           </div>
-          <div className="col-md-6 mt-4 mt-md-0">
+          <div className="col-md-6 mt-4 mt-md-0 mb-5">
             <div className="text-center text-md-end">
               <h3 className="mb-4">Email</h3>
               <a href="mailto:suyashkulkarni43@gmail.com" className="font-weight-bold text-blue-700 d-block text-decoration-none"><FontAwesomeIcon icon={faEnvelope} />&nbsp;suyashkulkarni43@gmail.com</a>
